@@ -1,0 +1,69 @@
+// Definieer de namespace
+$ns: "custom";
+
+// Namespace voor font
+.#{$ns}-font {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+// Namespace voor achtergrond
+.#{$ns}-background {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+// Namespace voor marge
+.#{$ns}-margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Algemene stijlen
+.#{$ns}-nav {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+
+// Gebruik van de stijlen op de specifieke elementen
+body {
+  @extend .#{$ns}-font;
+}
+
+.nav {
+  @extend .#{$ns}-background;
+  @extend .#{$ns}-margin;
+  @extend .#{$ns}-nav;
+}
+
+h2, h3 {
+  @extend .#{$ns}-font;
+  @extend .#{$ns}-margin;
+}
+
+p {
+  @extend .#{$ns}-font;
+}
+
+ul {
+  @extend .#{$ns}-font;
+}
+
+@for $i from 2 through 3 { 
+    section:nth-child(#{$i}) {
+      h#{$i} {
+        @extend .#{$ns}-font;
+        @extend .#{$ns}-margin;
+        font-weight: bold; 
+      }
+    }
+  }
