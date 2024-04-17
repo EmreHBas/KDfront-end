@@ -7,12 +7,20 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
-.nav ul li {
-    display: inline;
-    margin-right: 10px;
+.nav li {
+    float: left;
 }
+
+.nav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 
 
 /* Main Content */
@@ -44,4 +52,18 @@ section {
 footer {
     text-align: center;
     padding: 10px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .nav li {
+        float: none;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .main-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
